@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Vérifie si le nombre d'arguments est correct
 if [ "$#" -ne 2 ]; then
@@ -15,7 +15,7 @@ response=$(curl -k -s -o /dev/null -w "%{http_code}" "$URL")
 echo "HTTP Response Code: $response"
 
 # Compare le code de réponse au code attendu
-if [[ "$response" -ne "$EXPECTED_CODE" ]]; then
+if [ "$response" -ne "$EXPECTED_CODE" ]; then
   echo "Failure: The response code is not $EXPECTED_CODE."
   exit 1
 else
